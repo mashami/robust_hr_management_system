@@ -2,3 +2,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* In globals.scss or a module */
+.hover-white-shadow {
+  box-shadow: -16px -16px 40px 0px #FDFFFFCC;
+}
+
