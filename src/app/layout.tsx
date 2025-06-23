@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import "../styles/globals.scss";
 import { cn } from "@/lib/utils";
-import { Inter, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import {
   // GeometricBackground,
   BackgroundSvgLeft,
   BackgroundSvgRight
 } from "@/components/Svgs";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -30,10 +30,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          inter.className,
           poppins.variable,
 
-          "min-h-screen font-poppins"
+          "min-h-screen"
         )}
         style={{
           background: "linear-gradient(68.83deg, #DCE5F2 4.49%, #F1F4F9 98.4%)"
