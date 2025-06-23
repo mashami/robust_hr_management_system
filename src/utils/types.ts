@@ -19,3 +19,14 @@ export interface EventPeriod {
   period: string
   events: EventItemProps[]
 }
+
+export interface ExperienceItemProps {
+  position: string
+  periodTime: string
+  workDescription: string[]
+}
+
+export interface CriterialType {
+  title: string
+  checked: boolean
+}

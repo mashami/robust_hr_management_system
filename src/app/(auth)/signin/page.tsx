@@ -3,7 +3,12 @@
 import { FooterSign } from "@/components/FooterSign";
 import { SignIn } from "@/components/SignIn";
 import { SignUp } from "@/components/SignUp";
-import { FolderSvg, LogoSvg } from "@/components/Svgs";
+import {
+  BackgroundSvgLeft,
+  BackgroundSvgRight,
+  FolderSvg,
+  LogoSvg
+} from "@/components/Svgs";
 import { cn } from "@/lib/utils";
 import React, { useState } from "react";
 
@@ -11,6 +16,16 @@ const SignInPage = () => {
   const [show, setShow] = useState<"signin" | "signup">("signin");
   return (
     <div className="w-screen min-h-screen flex items-center justify-center relative">
+      <div className="fixed inset-0 -z-40 overflow-hidden">
+        <div className="absolute" />
+        <div className="absolute top-32 right-32 w-[1319.28px] h-[592.5px] ">
+          <BackgroundSvgRight />
+        </div>
+        <div className="absolute translate-x-1/4 bottom-28 w-3/5 h-3/5 rotate-8 ">
+          <BackgroundSvgLeft />
+        </div>
+      </div>
+
       <div
         className="rounded-lg p-12 min-w-[562px]"
         style={{
