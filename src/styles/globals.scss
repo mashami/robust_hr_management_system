@@ -4,8 +4,17 @@
 @tailwind utilities;
 
 
-/* In globals.scss or a module */
+
 .hover-white-shadow {
   box-shadow: -16px -16px 40px 0px #FDFFFFCC;
 }
 
+
+
+.scrollbar-hide {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
