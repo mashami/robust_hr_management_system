@@ -1,0 +1,7 @@
+export { default as DocumentsPage } from './Documents'
+export { default as EducationPage } from './Education'
+export { default as EvaluationsPage } from './Evaluations'
+export { default as EventsPage } from './Events'
+export { default as ExperiencePage } from './Experience'
+export { default as GeneralPage } from './General'
+export { default as MessagesPage } from './Messages'

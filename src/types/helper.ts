@@ -1,4 +1,4 @@
-import { EventPeriod } from '@/utils/types'
+import { CriterialType, EventPeriod, ExperienceItemProps } from '@/utils/types'
 
 export const jobData = [
   {
@@ -306,4 +306,39 @@ export const eventPeriods: EventPeriod[] = [
       },
     ],
   },
+]
+
+export const lastExperience: ExperienceItemProps[] = [
+  {
+    position: 'Senior Data Analyst',
+    periodTime: 'May 2021 - Present',
+    workDescription: [
+      'Data Exploration and Analysis: They perform exploratory data analysis to uncover insights, trends, and patterns in the data, often using statistical and visualisation techniques.',
+      'Data Cleaning and Preprocessing: Data analysts are responsible for cleaning and preparing raw renewable data to ensure its accuracy and reliability for analysis.',
+      'Reporting and Communication: Data analysts communicate their findings through reports, dashboards, and presentations to help stakeholders make informed decisions based on the data-driven insights.',
+    ],
+  },
+
+  {
+    position: 'Junior Data Analyst',
+    periodTime: 'May 2020 - May 2021',
+    workDescription: [
+      'Data Exploration and Analysis: They perform exploratory data analysis to uncover insights, trends, and patterns in the data, often using statistical and visualisation techniques.',
+      'Data Cleaning and Preprocessing: Data analysts are responsible for cleaning and preparing raw renewable data to ensure its accuracy and reliability for analysis.',
+      'Reporting and Communication: Data analysts communicate their findings through reports, dashboards, and presentations to help stakeholders make informed decisions based on the data-driven insights.',
+    ],
+  },
+]
+
+export const criterials: CriterialType[] = [
+  { title: 'Qualifications and skills match', checked: true },
+  { title: 'Experience Rlevance', checked: true },
+  { title: 'Education', checked: true },
+  { title: 'Keywords Match', checked: false },
+  { title: 'Years of Experience', checked: true },
+  { title: 'Job Hopping', checked: false },
+  { title: 'Cultural Fit', checked: true },
+  { title: 'Interview Performance', checked: false },
+  { title: 'References', checked: true },
+  { title: 'Additional Factors', checked: true },
 ]

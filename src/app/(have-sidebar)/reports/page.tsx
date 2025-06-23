@@ -2,8 +2,8 @@
 
 import React from "react";
 
-const JobsPage = () => {
-  return <div className="">DashboardPage</div>;
+const ReportsPage = () => {
+  return <div className="">ReportsPage</div>;
 };
 
-export default JobsPage;
+export default ReportsPage;
