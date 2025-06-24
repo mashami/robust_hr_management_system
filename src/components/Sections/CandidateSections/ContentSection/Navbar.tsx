@@ -46,7 +46,7 @@ const TABS: (
 
 const Navbar = ({ setComponentShow, componentShow }: NavbarProps) => {
   return (
-    <div className="flex items-center space-x-6 ">
+    <div className="flex flex-wrap flex-row items-center gap-6 ">
       {TABS.map((tab) => (
         <div
           key={tab}

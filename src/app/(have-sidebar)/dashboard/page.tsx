@@ -40,8 +40,8 @@ const DashboardPage = () => {
   }, [updateHeight]);
 
   return (
-    <div className="px-0 scrollbar-hide -z-50">
-      <div className="grid grid-cols-5 gap-4 group">
+    <div className="md:px-0 px-3 scrollbar-hide -z-50">
+      <div className="grid xl:grid-cols-5 md:grid-cols-4  md:gap-4 gap-2 group">
         <section
           className="flex flex-col gap-9 col-span-4 pb-6"
           ref={contentRef}
@@ -50,7 +50,7 @@ const DashboardPage = () => {
           <AttentionSection />
         </section>
 
-        <div className="col-span-1 scrollbar-hide">
+        <div className="col-span-1  scrollbar-hide xl:block hidden">
           <ScrollArea
             className="w-full scrollbar-hide"
             style={{

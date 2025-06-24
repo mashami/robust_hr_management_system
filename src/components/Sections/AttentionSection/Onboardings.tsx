@@ -57,7 +57,7 @@ export const Onboardings = () => {
             </TableCell>
 
             <TableCell
-              className={cn("text-center flex items-center  justify-center")}
+              className={cn("text-center flex items-center justify-center")}
             >
               {onboarding.assignedTo === "Not allocated" ? (
                 <span
@@ -68,7 +68,7 @@ export const Onboardings = () => {
                   {onboarding.assignedTo}
                 </span>
               ) : (
-                <span className="flex items-center justify-center shrink-0 self-center  bg-[#DDEAFB] rounded-2xl w-fit text-center">
+                <span className="flex flex-wrap items-center justify-center shrink-0 self-center  bg-[#DDEAFB] rounded-2xl w-fit text-center">
                   <span className="w-[22px] aspect-square rounded-full ring-4 ring-[#BDD4F3] overflow-hidden relative">
                     <Image
                       alt="image"

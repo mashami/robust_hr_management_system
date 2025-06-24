@@ -61,13 +61,13 @@ export const Candidates = () => {
               {candidate.supervisor === "Not allocated" ? (
                 <span
                   className={
-                    "text-[#FC5858] bg-[#D73F3F2E] rounded-2xl py-1 px-4 text-[12px] font-semibold"
+                    "text-[#FC5858] bg-[#D73F3F2E] flex flex-shrink-0 rounded-2xl py-1 px-4 text-[12px] font-semibold"
                   }
                 >
                   {candidate.supervisor}
                 </span>
               ) : (
-                <span className="flex items-center space-x-6 bg-[#DDEAFB] rounded-2xl text-center">
+                <span className="flex flex-wrap items-center space-x-6 bg-[#DDEAFB] rounded-2xl text-center">
                   <span className="w-[22px] aspect-square rounded-full ring-4 ring-[#BDD4F3] overflow-hidden relative">
                     <Image
                       alt="image"

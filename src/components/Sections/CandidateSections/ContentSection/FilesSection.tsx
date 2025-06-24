@@ -22,7 +22,7 @@ const FilesSection = () => {
         </span>
       </div>
 
-      <div className="flex items-center justify-between space-x-3 pt-4">
+      <div className="flex flex-row flex-wrap items-center justify-between gap-3 pt-4">
         {Files.map((file, i) => {
           return <FileItem key={i} name={file.name} period={file.period} />;
         })}
