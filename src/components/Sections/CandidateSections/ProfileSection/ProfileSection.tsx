@@ -26,7 +26,9 @@ const ProfileSection = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center space-x-4   text-[14px] opacity-50 font-light">
+
+            <div className="flex flex-wrap items-center space-x-4 text-[14px] opacity-50 font-light">
+
               <p>John.Doe@gmail.com</p>
 
               <span className="w-px h-2 bg-[#071C50]"></span>

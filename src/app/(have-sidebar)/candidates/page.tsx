@@ -19,7 +19,10 @@ const CandidatesPage = () => {
           <div className="group-hover:-translate-x-2 duration-300 ease-in-out">
             <ArrowLeft className="md:rotate-0 rotate-180" />
           </div>
-          <p className="  text-xs font-semibold md:pr-0 pr-1">Go Back</p>
+
+          <p className="text-xs font-semibold md:pr-0 pr-1">Go Back</p>
+          
+
         </div>
       </div>
 
