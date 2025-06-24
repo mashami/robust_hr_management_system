@@ -9,7 +9,7 @@ const ExperienceItem = ({
   workDescription
 }: ExperienceItemProps) => {
   return (
-    <div className="text-[#071C50]">
+    <div className=" ">
       <div>
         <div className="space-y-2">
           <div className="space-y-2 font-light border-l-[12px] border-[#E5EDF9] rounded-lg pl-2">

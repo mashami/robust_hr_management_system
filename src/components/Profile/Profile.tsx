@@ -28,7 +28,7 @@ const Profile = () => {
           />
         </div>
         <div className="flex items-center space-x-2">
-          <p className="text-[#071C50] font-semibold">Paccy</p>
+          <p className="  font-semibold">Paccy</p>
           <DownArrow />
         </div>
       </DropdownMenuTrigger>

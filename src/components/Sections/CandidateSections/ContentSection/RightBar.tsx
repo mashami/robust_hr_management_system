@@ -19,7 +19,7 @@ const RightBar = () => {
               key={index}
               className="flex items-center justify-between space-x-2"
             >
-              <p className="text-[#071C50] text-[14px] opacity-80 font-light">
+              <p className="  text-[14px] opacity-80 font-light">
                 {criterial.title}
               </p>
 

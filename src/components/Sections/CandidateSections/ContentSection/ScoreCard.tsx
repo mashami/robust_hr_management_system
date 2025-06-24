@@ -62,7 +62,7 @@ const ScoreCard: React.FC<ScoreCardProps> = ({
       {/* Score label */}
       <div className="text-center">
         <div className="flex items-center justify-center gap-2 font-semibold">
-          <span className="text-[#071C50]">Score:</span>
+          <span className=" ">Score:</span>
           <span className="text-[#469607]">{label}</span>
         </div>
       </div>

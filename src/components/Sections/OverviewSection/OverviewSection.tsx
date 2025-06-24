@@ -12,9 +12,8 @@ const OverviewSection = () => {
     <section>
       <div className="flex md:items-center items-start justify-between space-x-2 md:pt-0 pt-24">
         <span className="flex flex-col">
-          <h1 className="text-[#071C50] text-[22px] font-semibold md:pl-5">
-            Overview
-          </h1>
+          <h1 className="text-[22px] font-semibold md:pl-5">Overview</h1>
+
           <div className="md:hidden block">
             <Header />
           </div>

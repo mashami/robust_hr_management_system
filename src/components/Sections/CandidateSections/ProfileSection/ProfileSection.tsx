@@ -19,14 +19,16 @@ const ProfileSection = () => {
 
         <div className="flex flex-col justify-between space-y-3">
           <div className="space-y-2">
-            <div className="flex items-center space-x-3 text-[#071C50] ">
+            <div className="flex items-center space-x-3   ">
               <p className="text-[22px] font-semibold">John Doe</p>
               <p className="text-xs py-1 px-4 rounded-3xl bg-[#DDEAFB]">
                 Interview
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center space-x-4 text-[#071C50] text-[14px] opacity-50 font-light">
+
+            <div className="flex flex-wrap items-center space-x-4 text-[14px] opacity-50 font-light">
+
               <p>John.Doe@gmail.com</p>
 
               <span className="w-px h-2 bg-[#071C50]"></span>
@@ -83,18 +85,18 @@ const ProfileSection = () => {
 
       <div className="md:border-l-[2px] border-[#E5EDF9] pr-12 md:pl-24 pl-0">
         <div className="flex flex-col gap-3">
-          <h1 className="text-[#071C50] font-semibold">Current Status</h1>
+          <h1 className="  font-semibold">Current Status</h1>
 
           <div className="">
             <div className="flex items-center justify-between space-x-7">
-              <div className="space-y-4 text-[#071C50]/50 font-light">
+              <div className="space-y-4  /50 font-light">
                 <p className="">Round</p>
                 <p className="">Assigned to</p>
                 <p className="">Interview Date</p>
               </div>
 
               <div className="space-y-4">
-                <p className="text-xs py-1 px-4 rounded-3xl bg-[#DDEAFB]">
+                <p className="text-xs py-1 px-4 text-center rounded-3xl bg-[#DDEAFB]">
                   Interview
                 </p>
 
@@ -119,7 +121,7 @@ const ProfileSection = () => {
                   </span>
                 </span>
 
-                <p className="text-[#071C50] font-semibold">Jul 30, 2024</p>
+                <p className="  font-semibold">Jul 30, 2024</p>
               </div>
             </div>
           </div>

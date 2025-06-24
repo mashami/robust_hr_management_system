@@ -44,7 +44,7 @@ const SearchInput = () => {
             ${
               isFocused || searchValue
                 ? "text-blue-600 transform scale-110"
-                : "text-[#071C50]/60 group-hover:text-blue-500"
+                : " /60 group-hover:text-blue-500"
             }
           `}
         />
@@ -63,7 +63,7 @@ const SearchInput = () => {
             ${
               isFocused
                 ? "placeholder:text-blue-400/70 text-gray-800"
-                : "placeholder:text-[#071C50]/60 text-gray-700"
+                : "placeholder: /60 text-gray-700"
             }
           `}
         />

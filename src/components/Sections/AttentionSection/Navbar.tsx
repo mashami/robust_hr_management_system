@@ -30,8 +30,8 @@ const Navbar = ({ setComponentShow, componentShow }: NavbarProps) => {
             className={cn(
               "px-1",
               componentShow === tab
-                ? "text-[#071C50] font-semibold"
-                : "text-[#071C50] font-light opacity-65"
+                ? "  font-semibold"
+                : "  font-light opacity-65"
             )}
           >
             {tab.charAt(0).toUpperCase() + tab.slice(1)}
