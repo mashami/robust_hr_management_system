@@ -9,7 +9,7 @@ const Events = () => {
     <div className="space-y-6">
       {eventPeriods.map((period, periodIndex) => (
         <div key={periodIndex} className="space-y-2">
-          <h2 className="text-[12px] font-semibold text-[#071C50] opacity-50 pl-1">
+          <h2 className="text-[12px] font-semibold text-[#071C50] opacity-50 md:pl-1 pl-0">
             {period.period}
           </h2>
 

@@ -4,7 +4,7 @@ import React from "react";
 
 const ProfileSection = () => {
   return (
-    <section className="p-4 bg-[#F3F8FF] rounded-lg flex items-center justify-between">
+    <section className="p-4 bg-[#F3F8FF] rounded-lg flex md:flex-row flex-col gap-6 items-center md:justify-between">
       <div className="flex space-x-2">
         <div className="flex flex-col justify-between space-y-3 items-center ">
           <div className="w-[65px] aspect-square rounded-full flex items-center space-x-1 justify-center bg-[#6479AB30] text-[22px] text-[#071C5070] font-semibold">
@@ -26,7 +26,7 @@ const ProfileSection = () => {
               </p>
             </div>
 
-            <div className="flex items-center space-x-4 text-[#071C50] text-[14px] opacity-50 font-light">
+            <div className="flex flex-wrap items-center space-x-4 text-[#071C50] text-[14px] opacity-50 font-light">
               <p>John.Doe@gmail.com</p>
 
               <span className="w-px h-2 bg-[#071C50]"></span>
@@ -81,7 +81,7 @@ const ProfileSection = () => {
         </div>
       </div>
 
-      <div className="border-l-[2px] border-[#E5EDF9] pr-12 pl-24">
+      <div className="md:border-l-[2px] border-[#E5EDF9] pr-12 md:pl-24 pl-0">
         <div className="flex flex-col gap-3">
           <h1 className="text-[#071C50] font-semibold">Current Status</h1>
 

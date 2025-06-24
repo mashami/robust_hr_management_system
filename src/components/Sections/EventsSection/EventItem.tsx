@@ -15,11 +15,11 @@ const EventItem = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-10 bg-[#A0DBF457] rounded border-r-[5px] border-[#4B93E7] w-full",
+        "grid md:grid-cols-10 grid-cols-8 bg-[#A0DBF457] rounded border-r-[5px] border-[#4B93E7] w-full",
         active && "bg-[#B0F1B65C] border-[#2B570880]"
       )}
     >
-      <div className="border-r border-[#1B5CBE70] px-6 grid col-span-2 place-content-center">
+      <div className="border-r border-[#1B5CBE70] px-6 grid md:col-span-2 col-span-1 place-content-center">
         <p
           className={cn(
             "text-[#1B5CBE] font-semibold text-[12px] py-4",
@@ -32,7 +32,7 @@ const EventItem = ({
 
       <p
         className={cn(
-          "text-[#1B5CBE] text-[10px] col-span-8 place-content-center px-2 py-1 ",
+          "text-[#1B5CBE] text-[10px] md:col-span-8 col-span-5 place-content-center px-2 py-1 ",
           active && "text-[#2B5708]"
         )}
       >

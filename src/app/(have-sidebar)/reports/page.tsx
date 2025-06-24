@@ -3,7 +3,7 @@
 import React from "react";
 
 const ReportsPage = () => {
-  return <div className="">ReportsPage</div>;
+  return <div className="pt-20">Reports Page</div>;
 };
 
 export default ReportsPage;

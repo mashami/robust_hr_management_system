@@ -12,11 +12,11 @@ export default function RootLayout({
         <SideBar />
       </div>
       <div>
-        <div className="sticky top-0 z-40">
+        <div className="sticky top-0 z-40 md:block hidden">
           <NavBar />
         </div>
 
-        <div className="pl-[126px] z-30 relative">
+        <div className="md:pl-[126px] pl-0 z-30 relative">
           <div className="container pt-5"> {children} </div>
         </div>
       </div>
