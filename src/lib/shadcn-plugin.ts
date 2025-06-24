@@ -51,7 +51,7 @@ export const shadcnPlugin = plugin(
         '@apply border-border': {},
       },
       body: {
-        '@apply bg-background text-foreground font-poppins': {},
+        '@apply bg-background text-foreground font-poppins text-[#071C50]': {},
       },
     })
   },

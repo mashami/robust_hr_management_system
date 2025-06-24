@@ -18,19 +18,19 @@ export const Jobs = () => {
       <TableHeader>
         <TableRow className="hover:bg-transparent border-none">
           <TableHead className="w-[250px]"></TableHead>
-          <TableHead className="text-[#071C50] font-light opacity-65 text-center">
+          <TableHead className="  font-light opacity-65 text-center">
             Positions Left
           </TableHead>
-          <TableHead className="text-[#071C50] font-light opacity-65 text-center">
+          <TableHead className="  font-light opacity-65 text-center">
             Applications
           </TableHead>
-          <TableHead className="text-[#071C50] font-light opacity-65 text-center">
+          <TableHead className="  font-light opacity-65 text-center">
             Interviewed
           </TableHead>
-          <TableHead className="text-[#071C50] font-light opacity-65 text-center">
+          <TableHead className="  font-light opacity-65 text-center">
             Rejected
           </TableHead>
-          <TableHead className="text-[#071C50] font-light opacity-65 text-center">
+          <TableHead className="  font-light opacity-65 text-center">
             Feedback Pending
           </TableHead>
         </TableRow>
@@ -41,10 +41,8 @@ export const Jobs = () => {
             <TableCell className="flex items-center space-x-3">
               <JobCaseSvg />
               <div className="space-y-1">
-                <p className="text-[#071C50] font-semibold">{job.title}</p>
-                <p className="text-[#071C50] font-light text-xs">
-                  {job.postedAgo}
-                </p>
+                <p className="  font-semibold">{job.title}</p>
+                <p className="  font-light text-xs">{job.postedAgo}</p>
               </div>
             </TableCell>
 

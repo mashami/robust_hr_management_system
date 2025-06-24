@@ -15,8 +15,8 @@ import React, { useState } from "react";
 const SignInPage = () => {
   const [show, setShow] = useState<"signin" | "signup">("signin");
   return (
-    <div className="w-screen min-h-screen flex items-center justify-center relative">
-      <div className="fixed inset-0 -z-40 overflow-hidden">
+    <div className="w-screen md:min-h-screen min-h-screen flex items-center justify-center relative">
+      <div className="md:fixed hidden inset-0 -z-40 overflow-hidden">
         <div className="absolute" />
         <div className="absolute top-32 right-32 w-[1319.28px] h-[592.5px] ">
           <BackgroundSvgRight />
@@ -27,7 +27,7 @@ const SignInPage = () => {
       </div>
 
       <div
-        className="rounded-lg p-12 min-w-[562px]"
+        className="rounded-lg p-12 md:min-w-[562px] min-w-full"
         style={{
           background: "#E6EEF8",
           boxShadow:
@@ -37,15 +37,15 @@ const SignInPage = () => {
         <div className="flex items-center justify-center space-x-2">
           <LogoSvg />
 
-          <h1 className="text-[#082777] text-[24px] font-">HR Management</h1>
+          <h1 className="text-[#082777] text-[24px]">HR Management</h1>
         </div>
 
-        <div className="flex items-center justify-center space-x-8 pt-6">
-          <div>
+        <div className="flex items-center justify-center md:space-x-8 pt-6">
+          <div className="md:block hidden">
             <FolderSvg />
           </div>
 
-          <div className="border-l border-[#D3E2F4] pl-8">
+          <div className="md:border-l border-[#D3E2F4] md:pl-8 pl-0">
             <div className="flex items-center space-x-5">
               <div className="cursor-pointer" onClick={() => setShow("signin")}>
                 <h1
@@ -95,7 +95,7 @@ const SignInPage = () => {
         </div>
       </div>
 
-      <div className=" absolute bottom-3 right-1/2 translate-x-1/2">
+      <div className="absolute bottom-3 right-1/2 translate-x-1/2">
         <FooterSign />
       </div>
     </div>

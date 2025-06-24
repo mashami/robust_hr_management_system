@@ -403,11 +403,12 @@ export const ArrowRight = () => {
   );
 };
 
-export const ArrowLeft = () => {
+export const ArrowLeft = ({ className }: SvgTypes) => {
   return (
     <svg
       width={16}
       height={14}
+      className={className}
       viewBox="0 0 16 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -652,6 +653,41 @@ export const FalseSvg = () => {
           <stop offset="0.4455" stopColor="#EE3030" />
           <stop offset={1} stopColor="#D50000" />
         </linearGradient>
+      </defs>
+    </svg>
+  );
+};
+
+export const Menu = () => {
+  return (
+    <svg
+      width={52}
+      height={43}
+      viewBox="0 0 52 43"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+    >
+      <rect width={52} height={43} fill="url(#pattern0_50_7)" />
+      <defs>
+        <pattern
+          id="pattern0_50_7"
+          patternContentUnits="objectBoundingBox"
+          width={1}
+          height={1}
+        >
+          <use
+            xlinkHref="#image0_50_7"
+            transform="matrix(0.00918803 0 0 0.0111111 0.0865385 0)"
+          />
+        </pattern>
+        <image
+          id="image0_50_7"
+          width={90}
+          height={90}
+          preserveAspectRatio="none"
+          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAv0lEQVR4nO3awWrCQABF0Ys7/XxrqV9pu2m3kUDWYmahAz0H8gOXMAN5KQAAAAAAAADe6lR9Vj/V4ulRg+/qUh1HQl/Fbe8Ltjbb5VD9Cd3e0L9bO6GbLLSjo6HQXw1YD/aP7aB3Gfawwa06j16GAAAAAAD/nHG2p7/DG2d77WhhnO01oY2zTRp65b+OjLPLZIOxcRYAAAAAYJxxNuPsMsHHfuNs7wttnG3S0CvjbMbZZYLz2DgLAAAAAAAA0GTuqD9gUMDt6+cAAAAASUVORK5CYII="
+        />
       </defs>
     </svg>
   );

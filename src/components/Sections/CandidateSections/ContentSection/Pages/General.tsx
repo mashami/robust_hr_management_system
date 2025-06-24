@@ -7,14 +7,14 @@ import RightBar from "../RightBar";
 
 const GeneralPage = () => {
   return (
-    <section className="grid grid-cols-7 gap-4 pt-8">
-      <div className="col-span-5">
+    <section className="grid md:grid-cols-7 grid-cols-1 gap-4 pt-8">
+      <div className="md:col-span-5">
         <FilesSection />
         <Experiences />
       </div>
 
-      <div className="col-span-2">
-        <div>
+      <div className="md:col-span-2">
+        <div className="">
           <RightBar />
         </div>
       </div>

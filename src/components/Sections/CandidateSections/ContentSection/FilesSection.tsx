@@ -15,14 +15,14 @@ const FilesSection = () => {
   return (
     <div className="">
       <div className="flex items-center space-x-2">
-        <h1 className="text-[#071C50] font-medium">Candidate Files</h1>
+        <h1 className="  font-medium">Candidate Files</h1>
 
         <span className="text-[#7D9BE7] text-[12px] cursor-pointer font-semibold underline hover:text-blue-500 transition-all duration-200 ease-in-out">
           Edit
         </span>
       </div>
 
-      <div className="flex items-center justify-between space-x-3 pt-4">
+      <div className="flex flex-row flex-wrap items-center justify-between gap-3 pt-4">
         {Files.map((file, i) => {
           return <FileItem key={i} name={file.name} period={file.period} />;
         })}

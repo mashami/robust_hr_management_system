@@ -13,9 +13,9 @@ const FileItem = ({ name, period }: FileItemProps) => {
       {name.includes(".pdf") && <PdfSvg />}
       {name.includes(".doc") && <DocsSvg />}
 
-      <p className="text-[#071C50] text-sm font-light">{name}</p>
+      <p className="  text-sm font-light">{name}</p>
 
-      <p className="text-[#071C50]/50 text-xs font-light">{period}</p>
+      <p className=" /50 text-xs font-light">{period}</p>
     </div>
   );
 };

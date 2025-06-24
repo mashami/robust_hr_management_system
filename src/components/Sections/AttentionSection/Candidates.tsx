@@ -20,19 +20,19 @@ export const Candidates = () => {
       <TableHeader>
         <TableRow className="hover:bg-transparent border-none">
           <TableHead className="w-[250px]"></TableHead>
-          <TableHead className="text-[#071C50] font-light opacity-65 text-center">
+          <TableHead className="  font-light opacity-65 text-center">
             Onboarded On
           </TableHead>
-          <TableHead className="text-[#071C50] font-light opacity-65 text-center">
+          <TableHead className="  font-light opacity-65 text-center">
             Training
           </TableHead>
-          <TableHead className="text-[#071C50] font-light opacity-65 text-center">
+          <TableHead className="  font-light opacity-65 text-center">
             Documentation
           </TableHead>
-          <TableHead className="text-[#071C50] font-light opacity-65 text-center">
+          <TableHead className="  font-light opacity-65 text-center">
             Supervisor
           </TableHead>
-          <TableHead className="text-[#071C50] font-light opacity-65 text-center">
+          <TableHead className="  font-light opacity-65 text-center">
             Project
           </TableHead>
         </TableRow>
@@ -43,10 +43,8 @@ export const Candidates = () => {
             <TableCell className="flex items-center space-x-3">
               <ProfileSvg />
               <div className="space-y-1">
-                <p className="text-[#071C50] font-semibold">{candidate.name}</p>
-                <p className="text-[#071C50] font-light text-xs">
-                  {candidate.title}
-                </p>
+                <p className="  font-semibold">{candidate.name}</p>
+                <p className="  font-light text-xs">{candidate.title}</p>
               </div>
             </TableCell>
 
@@ -61,13 +59,13 @@ export const Candidates = () => {
               {candidate.supervisor === "Not allocated" ? (
                 <span
                   className={
-                    "text-[#FC5858] bg-[#D73F3F2E] rounded-2xl py-1 px-4 text-[12px] font-semibold"
+                    "text-[#FC5858] bg-[#D73F3F2E] flex flex-shrink-0 rounded-2xl py-1 px-4 text-[12px] font-semibold"
                   }
                 >
                   {candidate.supervisor}
                 </span>
               ) : (
-                <span className="flex items-center space-x-6 bg-[#DDEAFB] rounded-2xl text-center">
+                <span className="flex flex-wrap items-center space-x-6 bg-[#DDEAFB] rounded-2xl text-center">
                   <span className="w-[22px] aspect-square rounded-full ring-4 ring-[#BDD4F3] overflow-hidden relative">
                     <Image
                       alt="image"

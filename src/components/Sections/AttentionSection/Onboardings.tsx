@@ -20,16 +20,16 @@ export const Onboardings = () => {
       <TableHeader>
         <TableRow className="hover:bg-transparent border-none">
           <TableHead className="w-[250px]"></TableHead>
-          <TableHead className="text-[#071C50] font-light opacity-65 text-center">
+          <TableHead className="  font-light opacity-65 text-center">
             Applied On
           </TableHead>
-          <TableHead className="text-[#071C50] font-light opacity-65 text-center">
+          <TableHead className="  font-light opacity-65 text-center">
             Interview Round
           </TableHead>
-          <TableHead className="text-[#071C50] font-light opacity-65 text-center">
+          <TableHead className="  font-light opacity-65 text-center">
             Assigned to
           </TableHead>
-          <TableHead className="text-[#071C50] font-light opacity-65 text-center">
+          <TableHead className="  font-light opacity-65 text-center">
             Score
           </TableHead>
         </TableRow>
@@ -40,12 +40,8 @@ export const Onboardings = () => {
             <TableCell className="flex items-center space-x-3">
               <ProfileSvg />
               <div className="space-y-1">
-                <p className="text-[#071C50] font-semibold">
-                  {onboarding.name}
-                </p>
-                <p className="text-[#071C50] font-light text-xs">
-                  {onboarding.role}
-                </p>
+                <p className="  font-semibold">{onboarding.name}</p>
+                <p className="  font-light text-xs">{onboarding.role}</p>
               </div>
             </TableCell>
 
@@ -57,7 +53,7 @@ export const Onboardings = () => {
             </TableCell>
 
             <TableCell
-              className={cn("text-center flex items-center  justify-center")}
+              className={cn("text-center flex items-center justify-center")}
             >
               {onboarding.assignedTo === "Not allocated" ? (
                 <span
@@ -68,7 +64,7 @@ export const Onboardings = () => {
                   {onboarding.assignedTo}
                 </span>
               ) : (
-                <span className="flex items-center justify-center shrink-0 self-center  bg-[#DDEAFB] rounded-2xl w-fit text-center">
+                <span className="flex flex-wrap items-center justify-center shrink-0 self-center  bg-[#DDEAFB] rounded-2xl w-fit text-center">
                   <span className="w-[22px] aspect-square rounded-full ring-4 ring-[#BDD4F3] overflow-hidden relative">
                     <Image
                       alt="image"

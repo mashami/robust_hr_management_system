@@ -46,7 +46,7 @@ const TABS: (
 
 const Navbar = ({ setComponentShow, componentShow }: NavbarProps) => {
   return (
-    <div className="flex items-center space-x-6 ">
+    <div className="flex flex-wrap flex-row items-center gap-6 ">
       {TABS.map((tab) => (
         <div
           key={tab}
@@ -57,8 +57,8 @@ const Navbar = ({ setComponentShow, componentShow }: NavbarProps) => {
             className={cn(
               "px-1",
               componentShow === tab
-                ? "text-[#071C50] font-semibold"
-                : "text-[#071C50] font-light opacity-65"
+                ? "  font-semibold"
+                : "  font-light opacity-65"
             )}
           >
             {tab.charAt(0).toUpperCase() + tab.slice(1)}

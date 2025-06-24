@@ -7,19 +7,19 @@ import React from "react";
 
 const CandidatesPage = () => {
   return (
-    <div className="container pb-4">
+    <div className="md:container pb-4 md:pt-0 pt-20">
       <div className="flex items-center justify-between space-x-2">
-        <div className="flex items-center space-x-2 text-xs text-[#071C50]">
+        <div className="flex items-center space-x-2 text-xs  ">
           <p className="opacity-50">Candidates</p>
           <ArrowRight />
           <p className="font-semibold">John Doe</p>
         </div>
 
-        <div className="flex items-center space-x-1.5 cursor-pointer py-4 group">
+        <div className="flex md:flex-row flex-row-reverse items-center space-x-1.5 cursor-pointer py-4 group">
           <div className="group-hover:-translate-x-2 duration-300 ease-in-out">
-            <ArrowLeft />
+            <ArrowLeft className="md:rotate-0 rotate-180" />
           </div>
-          <p className="text-[#071C50] text-xs font-semibold">Go Back</p>
+          <p className="  text-xs font-semibold md:pr-0 pr-1">Go Back</p>
         </div>
       </div>
 
