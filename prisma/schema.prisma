@@ -28,29 +28,29 @@ model User {
 }
 
 model Candidate {
-  id              String           @id @default(auto()) @map("_id") @db.ObjectId
+  id              String          @id @default(auto()) @map("_id") @db.ObjectId
   name            String
-  email           String           @unique
+  email           String          @unique
   phone           String?
   position        String
   experience      Int // Years of experience
   skills          String[] // Array of skills
-  status          Status           @default(Applied)
-  resume          String? // URL to resume file
-  notes           String?
-  onboardedOn     DateTime?
+  status          Status          @default(Applied)
+  resume          String?         @default("")
+  notes           String?         @default("")
+  onboardedOn     DateTime        @default(now())
   supervisor      String
-  documentation   String           @default("Not allocated")
-  project         String           @default("Not Allocated")
-  training        String?
-  interviewStatus InterviewStatus?
-  expectedSalary  Float?
-  currentSalary   Float?
-  noticePeriod    String?
-  location        String?
-  source          String? // LinkedIn, Referral, Website, etc.
-  createdAt       DateTime         @default(now())
-  updatedAt       DateTime         @updatedAt
+  documentation   String          @default("Not allocated")
+  project         String          @default("Not Allocated")
+  training        String?         @default("")
+  interviewStatus InterviewStatus @default(Scheduled)
+  expectedSalary  Float?          @default(0.0)
+  currentSalary   Float?          @default(0.0)
+  noticePeriod    String?         @default("")
+  location        String?         @default("")
+  source          String?         @default("")
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
 
   @@map("candidates")
 }
@@ -62,15 +62,15 @@ model Job {
   location            String
   type                JopType        @default(FullTime)
   level               JopLevel       @default(Officer)
-  minSalary           Float?
-  maxSalary           Float?
+  minSalary           Float?         @default(0.0)
+  maxSalary           Float?         @default(0.0)
   description         String
   requirements        String[]
   skills              String[]
   benefits            String[]
   status              Jobstatus      @default(Open)
   postedDate          DateTime       @default(now())
-  applicationDeadline DateTime?
+  applicationDeadline DateTime
   openings            Int            @default(1)
   applicantsCount     Int            @default(0)
   interviewed         Int            @default(0)
@@ -78,7 +78,7 @@ model Job {
   feedbackPending     Int            @default(0)
   offered             Int            @default(0)
   priority            PriorityStatus @default(Medium)
-  hiringManager       String?
+  hiringManager       String?        @default("")
   createdAt           DateTime       @default(now())
   updatedAt           DateTime       @updatedAt
 
