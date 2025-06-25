@@ -1,11 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🏢 HR Management System
+A modern web application for managing candidates, job postings, and recruitment workflows built with Next.js and Prisma.
+✨ Features
 
-## Getting Started
+Candidate Management - Track applicants through the hiring pipeline
+Job Postings - Create and manage open positions
+Application Tracking - Monitor recruitment metrics and status
+Dashboard Analytics - View hiring insights and performance
 
-First, run the development server:
+🛠️ Tech Stack
+
+Frontend: Next.js 14, TypeScript, Tailwind CSS, shadcn/ui
+Backend: Next.js API Routes, Prisma ORM
+Database: PostgreSQL
+Tools: Yarn, tsx
+
+🚀 Quick Start
+
+Clone & Install
 
 ```bash
-npm run dev
+git clone <repo-url>
+cd robust_hr_management_system
+yarn install
 # or
 yarn dev
 # or
@@ -13,24 +29,36 @@ pnpm dev
 # or
 bun dev
 ```
+Database Setup:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+npx prisma migrate dev
+npx prisma generate
+npx prisma db push
+```
+Start Development:
+```bash
+yarn dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Core Models
+Candidate
 
-## Learn More
+Personal info, skills, experience
+Status tracking (Applied → Hired)
+Interview management
 
-To learn more about Next.js, take a look at the following resources:
+Job
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Position details, requirements
+Salary range, openings
+Application deadlines
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🔧 Key Scripts
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+yarn dev           # Development server
+yarn build         # Production build
+yarn seed          # Seed candidates
+yarn seed-jobs     # Seed job postings
+npx prisma studio  # Database viewer
