@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "../styles/globals.scss";
 import { cn } from "@/lib/utils";
 import { Poppins } from "next/font/google";
+import { Toaster } from "@/components/ui/toaster";
+import { AppContextProvider } from "@/utils/context/AppContext";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -33,7 +35,11 @@ export default function RootLayout({
           background: "linear-gradient(68.83deg, #DCE5F2 4.49%, #F1F4F9 98.4%)"
         }}
       >
-        <div className="relative z-10">{children}</div>
+        <div className="relative z-10">
+          <AppContextProvider>{children}</AppContextProvider>
+        </div>
+
+        <Toaster />
       </body>
     </html>
   );

@@ -11,8 +11,13 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Image from "next/image";
 import { DownArrow } from "../Svgs";
+import { signOut } from "next-auth/react";
 
-const Profile = () => {
+interface ProfileType {
+  name: string;
+}
+const Profile = ({ name }: ProfileType) => {
+  const firstName = name.split(" ")[0];
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="flex items-center space-x-3 outline-none">
@@ -28,7 +33,7 @@ const Profile = () => {
           />
         </div>
         <div className="flex items-center space-x-2">
-          <p className="  font-semibold">Paccy</p>
+          <p className="  font-semibold">{firstName}</p>
           <DownArrow />
         </div>
       </DropdownMenuTrigger>
@@ -36,7 +41,9 @@ const Profile = () => {
         <DropdownMenuLabel>My Profile</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>Profile</DropdownMenuItem>
-        <DropdownMenuItem>Logout</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => signOut({ callbackUrl: "/signin" })}>
+          Logout
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
