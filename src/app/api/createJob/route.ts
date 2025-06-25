@@ -1,12 +1,6 @@
 import { prisma } from '@/lib/prisma'
 import { HttpStatusCode } from '@/utils/enums'
-import {
-  JopType,
-  JopLevel,
-  PriorityStatus,
-  Jobstatus,
-  Job,
-} from '@prisma/client'
+import { JopType, JopLevel, PriorityStatus, Jobstatus } from '@prisma/client'
 import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
@@ -30,7 +24,6 @@ export async function POST(req: Request) {
       hiringManager,
     } = await req.json()
 
-    // Validate required fields
     if (!title || !department || !location || !description) {
       return NextResponse.json(
         {
@@ -41,7 +34,6 @@ export async function POST(req: Request) {
       )
     }
 
-    // Validate salary range
     if (
       minSalary &&
       maxSalary &&
@@ -56,7 +48,6 @@ export async function POST(req: Request) {
       )
     }
 
-    // Validate salary values are positive
     if (minSalary && parseFloat(minSalary) < 0) {
       return NextResponse.json(
         { error: true, message: 'Minimum salary must be a positive number' },
@@ -71,7 +62,6 @@ export async function POST(req: Request) {
       )
     }
 
-    // Validate openings
     if (openings && parseInt(openings) < 1) {
       return NextResponse.json(
         { error: true, message: 'Number of openings must be at least 1' },
@@ -79,7 +69,6 @@ export async function POST(req: Request) {
       )
     }
 
-    // Validate application deadline
     if (applicationDeadline && new Date(applicationDeadline) <= new Date()) {
       return NextResponse.json(
         { error: true, message: 'Application deadline must be in the future' },
@@ -87,7 +76,6 @@ export async function POST(req: Request) {
       )
     }
 
-    // Prepare data for database insertion
     const jobData = {
       title: title.trim(),
       department: department.trim(),
@@ -98,24 +86,24 @@ export async function POST(req: Request) {
       maxSalary: maxSalary ? parseFloat(maxSalary) : null,
       description: description.trim(),
       requirements: Array.isArray(requirements)
-        ? requirements.filter((req) => req.trim() !== '')
+        ? requirements.filter((req: string) => req.trim() !== '')
         : [],
       skills: Array.isArray(skills)
-        ? skills.filter((skill) => skill.trim() !== '')
+        ? skills.filter((skill: string) => skill.trim() !== '')
         : [],
       benefits: Array.isArray(benefits)
-        ? benefits.filter((benefit) => benefit.trim() !== '')
+        ? benefits.filter((benefit: string) => benefit.trim() !== '')
         : [],
       status: status || Jobstatus.Open,
-      applicationDeadline: applicationDeadline
-        ? new Date(applicationDeadline)
-        : null,
+
+      ...(applicationDeadline && {
+        applicationDeadline: new Date(applicationDeadline),
+      }),
       openings: openings ? parseInt(openings) : 1,
       priority: priority || PriorityStatus.Medium,
-      hiringManager: hiringManager?.trim() || null,
-    } as Job
+      ...(hiringManager?.trim() && { hiringManager: hiringManager.trim() }),
+    }
 
-    // Create job in database
     const job = await prisma.job.create({
       data: jobData,
     })
