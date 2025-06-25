@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Table,
   TableBody,
@@ -9,12 +10,44 @@ import {
   TableHeader,
   TableRow
 } from "@/components/ui/table";
-import { candidatesData } from "@/types/helper";
+// import { candidatesData } from "@/types/helper";
 import { ProfileSvg } from "@/components/Svgs";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { getAllCandidates } from "@/services/user";
+import { CandidateResponse } from "@/utils/types";
 
 export const Candidates = () => {
+  const [candidates, setCandidates] = useState<CandidateResponse[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchAllCandidates = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const response = await getAllCandidates();
+
+      if (response.success && response.data) {
+        setCandidates(response.data);
+      } else {
+        setError(response.message || "Failed to fetch candidates");
+        setCandidates([]);
+      }
+    } catch (error) {
+      console.error("Error fetching candidates:", error);
+      setError(error instanceof Error ? error.message : "An error occurred");
+      setCandidates([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchAllCandidates();
+  }, []);
+
   return (
     <Table className="bg-white rounded-lg">
       <TableHeader>
@@ -38,7 +71,7 @@ export const Candidates = () => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {candidatesData.map((candidate, index) => (
+        {candidates.map((candidate, index) => (
           <TableRow key={index}>
             <TableCell className="flex items-center space-x-3">
               <ProfileSvg />
@@ -49,7 +82,12 @@ export const Candidates = () => {
             </TableCell>
 
             <TableCell className="text-center">
-              {candidate.onboardedOn}
+              {candidate.onboardedOn &&
+                new Date(candidate.onboardedOn).toLocaleDateString("en-GB", {
+                  day: "2-digit",
+                  month: "short",
+                  year: "numeric"
+                })}
             </TableCell>
             <TableCell className="text-center">{candidate.training}</TableCell>
             <TableCell className="text-center">

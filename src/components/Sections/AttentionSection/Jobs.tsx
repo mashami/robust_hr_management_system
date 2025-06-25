@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Table,
   TableBody,
@@ -11,8 +12,41 @@ import {
 } from "@/components/ui/table";
 import { jobData } from "@/types/helper";
 import { JobCaseSvg } from "@/components/Svgs";
+import { Job } from "@prisma/client";
+import { getAllJobs } from "@/services/user";
 
 export const Jobs = () => {
+  const [jobs, setJobs] = useState<Job[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchAlljobs = async () => {
+    try {
+      setLoading(true); // ✅ Set loading to true
+      setError(null); // ✅ Clear previous errors
+
+      const response = await getAllJobs();
+
+      // ✅ Check if response is successful
+      if (response.success && response.data) {
+        setJobs(response.data); // ✅ Set the data array directly, not wrapped in object
+      } else {
+        setError(response.message || "Failed to fetch jobs");
+        setJobs([]); // ✅ Clear jobs on error
+      }
+    } catch (error) {
+      console.error("Error fetching jobs:", error); // ✅ Correct error message
+      setError(error instanceof Error ? error.message : "An error occurred");
+      setJobs([]); // ✅ Clear jobs on error
+    } finally {
+      setLoading(false); // ✅ Set loading to false in all cases
+    }
+  };
+
+  useEffect(() => {
+    fetchAlljobs();
+  }, []);
+
   return (
     <Table className="bg-white rounded-lg">
       <TableHeader>
@@ -36,18 +70,25 @@ export const Jobs = () => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {jobData.map((job, index) => (
+        {jobs.map((job, index) => (
           <TableRow key={index}>
             <TableCell className="flex items-center space-x-3">
               <JobCaseSvg />
               <div className="space-y-1">
                 <p className="  font-semibold">{job.title}</p>
-                <p className="  font-light text-xs">{job.postedDate}</p>
+                <p className="  font-light text-xs">
+                  {job.postedDate &&
+                    new Date(job.postedDate).toLocaleDateString("en-GB", {
+                      day: "2-digit",
+                      month: "short",
+                      year: "numeric"
+                    })}
+                </p>
               </div>
             </TableCell>
 
-            <TableCell className="text-center">{job.positionsLeft}</TableCell>
-            <TableCell className="text-center">{job.applications}</TableCell>
+            <TableCell className="text-center">{job.openings}</TableCell>
+            <TableCell className="text-center">{job.applicantsCount}</TableCell>
             <TableCell className="text-center">{job.interviewed}</TableCell>
             <TableCell className="text-center">{job.rejected}</TableCell>
             <TableCell className="text-center">{job.feedbackPending}</TableCell>
