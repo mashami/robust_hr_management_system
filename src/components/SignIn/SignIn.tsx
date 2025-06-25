@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import React, { useState } from "react";
@@ -6,12 +7,61 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Button } from "../ui/button";
 import { GoogleSvg } from "../Svgs";
+import { useAppContext } from "@/utils/context/AppContext";
+import { useRouter } from "next/navigation";
+import { toast } from "../ui/use-toast";
+import { signIn } from "next-auth/react";
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const { fetchUser } = useAppContext();
+
+  const router = useRouter();
+
+  const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!email || !password) {
+      return toast({
+        variant: "destructive",
+        description: "All fields are required"
+      });
+    }
+    setIsLoading(true);
+
+    try {
+      const result = await signIn("credentials", {
+        email,
+        password,
+        redirect: false
+      });
+
+      if (result?.error) {
+        toast({
+          variant: "destructive",
+          description: "User with this email doesn't found"
+        });
+
+        setIsLoading(false);
+
+        return;
+      }
+
+      fetchUser();
+
+      return router.push("/dashboard");
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        description: "An error occured. Please try again."
+      });
+      setIsLoading(false);
+    }
+  };
 
   return (
-    <div>
+    <form action="onSubmit" onSubmit={onSubmitHandler}>
       <div className="flex flex-col gap-5">
         <FloatingInput
           label="Email"
@@ -46,6 +96,8 @@ const SignIn = () => {
           style={{
             boxShadow: "0px 4px 8px 0px #00000029 inset"
           }}
+          loading={isLoading}
+          disabled={isLoading}
         />
 
         <Button
@@ -57,7 +109,7 @@ const SignIn = () => {
           svg={<GoogleSvg />}
         />
       </div>
-    </div>
+    </form>
   );
 };
 

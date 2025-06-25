@@ -38,7 +38,7 @@ const FloatingInput = ({
           onBlur={() => setIsFocused(false)}
           placeholder={isFloating ? placeholder : ""}
           className={`
-            w-full px-4 py-2 text-base
+            w-full px-4 py-2 text-sm
             bg-blue-50/40 border border-blue-200/60 rounded-xl
             
             focus:outline-none 

@@ -42,7 +42,7 @@ export const Jobs = () => {
               <JobCaseSvg />
               <div className="space-y-1">
                 <p className="  font-semibold">{job.title}</p>
-                <p className="  font-light text-xs">{job.postedAgo}</p>
+                <p className="  font-light text-xs">{job.postedDate}</p>
               </div>
             </TableCell>
 

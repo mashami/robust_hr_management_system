@@ -1,3 +1,5 @@
+import { Role } from '@prisma/client'
+
 export interface SvgTypes {
   className?: string
   color?: string
@@ -29,4 +31,12 @@ export interface ExperienceItemProps {
 export interface CriterialType {
   title: string
   checked: boolean
+}
+
+export interface SignupType {
+  name: string
+  email: string
+  password: string
+  retypePassword: string
+  role?: Role
 }

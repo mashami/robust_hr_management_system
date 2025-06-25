@@ -1,0 +1,145 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  name          String
+  email         String    @unique
+  emailVerified DateTime? @default(now())
+  password      String
+  role          Role      @default(HR)
+  image         String?   @default("")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@map("users")
+}
+
+model Candidate {
+  id              String           @id @default(auto()) @map("_id") @db.ObjectId
+  name            String
+  email           String           @unique
+  phone           String?
+  position        String
+  experience      Int // Years of experience
+  skills          String[] // Array of skills
+  status          Status           @default(Applied)
+  resume          String? // URL to resume file
+  notes           String?
+  onboardedOn     DateTime?
+  supervisor      String
+  documentation   String           @default("Not allocated")
+  project         String           @default("Not Allocated")
+  training        String?
+  interviewStatus InterviewStatus?
+  expectedSalary  Float?
+  currentSalary   Float?
+  noticePeriod    String?
+  location        String?
+  source          String? // LinkedIn, Referral, Website, etc.
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+
+  @@map("candidates")
+}
+
+model Job {
+  id                  String         @id @default(auto()) @map("_id") @db.ObjectId
+  title               String
+  department          String
+  location            String
+  type                JopType        @default(FullTime)
+  level               JopLevel       @default(Officer)
+  minSalary           Float?
+  maxSalary           Float?
+  description         String
+  requirements        String[]
+  skills              String[]
+  benefits            String[]
+  status              Jobstatus      @default(Open)
+  postedDate          DateTime       @default(now())
+  applicationDeadline DateTime?
+  openings            Int            @default(1)
+  applicantsCount     Int            @default(0)
+  interviewed         Int            @default(0)
+  rejected            Int            @default(0)
+  feedbackPending     Int            @default(0)
+  offered             Int            @default(0)
+  priority            PriorityStatus @default(Medium)
+  hiringManager       String?
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
+
+  @@map("jobs")
+}
+
+model Event {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  startTime String
+  endTime   String
+  name      String
+  position  String
+  phase     String
+  active    Boolean? @default(true)
+
+  @@map("events")
+}
+
+enum Role {
+  HR
+  Candidate
+}
+
+enum JopType {
+  FullTime
+  PartTime
+  Contract
+  Intern
+}
+
+enum JopLevel {
+  Mid
+  Senior
+  Lead
+  Officer
+}
+
+enum Status {
+  Applied
+  Screening
+  Interview
+  Hired
+  Rejected
+}
+
+enum InterviewStatus {
+  Scheduled
+  Completed
+  Cancelled
+}
+
+enum PriorityStatus {
+  High
+  Medium
+  Low
+}
+
+enum Jobstatus {
+  Open
+  Closed
+  OnHold
+}
+
+//npx prisma db push

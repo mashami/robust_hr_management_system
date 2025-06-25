@@ -44,7 +44,7 @@ export const Candidates = () => {
               <ProfileSvg />
               <div className="space-y-1">
                 <p className="  font-semibold">{candidate.name}</p>
-                <p className="  font-light text-xs">{candidate.title}</p>
+                <p className="  font-light text-xs">{candidate.position}</p>
               </div>
             </TableCell>
 

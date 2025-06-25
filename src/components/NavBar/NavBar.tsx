@@ -3,8 +3,13 @@
 import React from "react";
 import { SearchInput } from "../SearcInput";
 import { Profile } from "../Profile";
+import { User } from "@prisma/client";
 
-const NavBar = () => {
+interface NavBarType {
+  user: Pick<User, "id" | "name" | "role">;
+}
+
+const NavBar = ({ user }: NavBarType) => {
   return (
     <nav className="pl-[126px] bg-white">
       <div
@@ -18,7 +23,7 @@ const NavBar = () => {
         </div>
 
         <div>
-          <Profile />
+          <Profile name={user.name} />
         </div>
       </div>
     </nav>

@@ -3,9 +3,9 @@ import { CriterialType, EventPeriod, ExperienceItemProps } from '@/utils/types'
 export const jobData = [
   {
     title: 'Senior Data Analyst',
-    postedAgo: '100 days ago',
-    positionsLeft: 3,
-    applications: 123,
+    postedDate: '100 days ago',
+    openings: 3,
+    applicantsCount: 123,
     interviewed: 40,
     rejected: 33,
     feedbackPending: 7,
@@ -13,7 +13,7 @@ export const jobData = [
   },
   {
     title: 'Junior Data Analyst',
-    postedAgo: '78 days ago',
+    postedDate: '78 days ago',
     positionsLeft: 7,
     applications: 567,
     interviewed: 22,
@@ -23,7 +23,7 @@ export const jobData = [
   },
   {
     title: 'Product Designer',
-    postedAgo: '56 days ago',
+    postedDate: '56 days ago',
     positionsLeft: 2,
     applications: 201,
     interviewed: 32,
@@ -33,7 +33,7 @@ export const jobData = [
   },
   {
     title: 'Java Developer',
-    postedAgo: '46 days ago',
+    postedDate: '46 days ago',
     positionsLeft: 5,
     applications: 231,
     interviewed: 23,
@@ -43,7 +43,7 @@ export const jobData = [
   },
   {
     title: 'Product Manager',
-    postedAgo: '13 days ago',
+    postedDate: '13 days ago',
     positionsLeft: 3,
     applications: 67,
     interviewed: 41,
@@ -56,7 +56,7 @@ export const jobData = [
 export const candidatesData = [
   {
     name: 'Gakire Clement',
-    title: 'Sr. Software Developer',
+    position: 'Sr. Software Developer',
     onboardedOn: 'Jul 3, 2023',
     training: '06/10',
     documentation: '06/10',
@@ -65,7 +65,7 @@ export const candidatesData = [
   },
   {
     name: 'Mutoni Angel',
-    title: 'Sr. Product Designer',
+    position: 'Sr. Product Designer',
     onboardedOn: 'Jul 9, 2023',
     training: '02/8',
     documentation: '06/10',
@@ -74,7 +74,7 @@ export const candidatesData = [
   },
   {
     name: 'Hirwa Fabienne',
-    title: 'Product Lead',
+    position: 'Product Lead',
     onboardedOn: 'Mar 20, 2023',
     training: '01/5',
     documentation: '06/10',
@@ -83,7 +83,7 @@ export const candidatesData = [
   },
   {
     name: 'Ntwari Amri',
-    title: 'Sr. Java Developer',
+    position: 'Sr. Java Developer',
     onboardedOn: 'Aug 18, 2023',
     training: '07/10',
     documentation: '06/10',
@@ -92,7 +92,7 @@ export const candidatesData = [
   },
   {
     name: 'Kalisa John',
-    title: 'Sr. Software Developer',
+    position: 'Sr. Software Developer',
     onboardedOn: 'Sep 22, 2023',
     training: '06/10',
     documentation: '06/10',
