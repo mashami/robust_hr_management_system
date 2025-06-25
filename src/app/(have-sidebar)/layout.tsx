@@ -3,6 +3,7 @@ import { NavBar } from "@/components/NavBar";
 import { SideBar } from "@/components/SideBar";
 import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/session";
+import { redirect } from "next/navigation";
 
 export default async function RootLayout({
   children
@@ -12,7 +13,7 @@ export default async function RootLayout({
   const sessionUser = await getCurrentUser();
 
   if (!sessionUser) {
-    throw new Error("User not found");
+    redirect("/signin");
   }
 
   const user = (await prisma.user.findFirst({
