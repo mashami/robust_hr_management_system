@@ -11,7 +11,7 @@ Dashboard Analytics - View hiring insights and performance
 
 Frontend: Next.js 14, TypeScript, Tailwind CSS, shadcn/ui
 Backend: Next.js API Routes, Prisma ORM
-Database: PostgreSQL
+Database: MongoDb Atlas
 Tools: Yarn, tsx
 
 🚀 Quick Start
