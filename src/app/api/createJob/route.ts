@@ -1,6 +1,12 @@
 import { prisma } from '@/lib/prisma'
 import { HttpStatusCode } from '@/utils/enums'
-import { JopType, JopLevel, PriorityStatus, Jobstatus } from '@prisma/client'
+import {
+  JopType,
+  JopLevel,
+  PriorityStatus,
+  Jobstatus,
+  Job,
+} from '@prisma/client'
 import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
@@ -107,7 +113,7 @@ export async function POST(req: Request) {
       openings: openings ? parseInt(openings) : 1,
       priority: priority || PriorityStatus.Medium,
       hiringManager: hiringManager?.trim() || null,
-    }
+    } as Job
 
     // Create job in database
     const job = await prisma.job.create({
