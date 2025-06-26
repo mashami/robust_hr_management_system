@@ -18,11 +18,11 @@ export async function middleware(req: NextRequest) {
 
   if (
     !session &&
-    (path.startsWith('/dashboard') ||
-      path.startsWith('/calendar') ||
-      path.startsWith('/candidates') ||
-      path.startsWith('/jobs') ||
-      path.startsWith('/reports'))
+    path.startsWith('/dashboard')
+    // path.startsWith('/calendar') ||
+    // path.startsWith('/candidates') ||
+    // path.startsWith('/jobs') ||
+    // path.startsWith('/reports')
   ) {
     const url = req.nextUrl.clone()
     url.pathname = '/signin'

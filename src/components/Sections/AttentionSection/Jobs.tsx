@@ -22,24 +22,23 @@ export const Jobs = () => {
 
   const fetchAlljobs = async () => {
     try {
-      setLoading(true); // ✅ Set loading to true
-      setError(null); // ✅ Clear previous errors
+      setLoading(true);
+      setError(null);
 
       const response = await getAllJobs();
 
-      // ✅ Check if response is successful
       if (response.success && response.data) {
-        setJobs(response.data); // ✅ Set the data array directly, not wrapped in object
+        setJobs(response.data);
       } else {
         setError(response.message || "Failed to fetch jobs");
-        setJobs([]); // ✅ Clear jobs on error
+        setJobs([]);
       }
     } catch (error) {
-      console.error("Error fetching jobs:", error); // ✅ Correct error message
+      console.error("Error fetching jobs:", error);
       setError(error instanceof Error ? error.message : "An error occurred");
-      setJobs([]); // ✅ Clear jobs on error
+      setJobs([]);
     } finally {
-      setLoading(false); // ✅ Set loading to false in all cases
+      setLoading(false);
     }
   };
 
