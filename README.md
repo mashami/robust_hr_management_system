@@ -16,7 +16,7 @@ Tools: Yarn, tsx
 
 🚀 Quick Start
 
-Production link: https://mashami-robust-hr-management-system-56si-epia47wfx.vercel.app/
+Production link: https://mashami-robust-hr-management-system.vercel.app/
 
 Clone & Install
 
