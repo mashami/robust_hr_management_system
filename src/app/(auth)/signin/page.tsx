@@ -17,7 +17,7 @@ const SignInPage = () => {
 
   return (
     <div className="w-screen md:min-h-screen min-h-screen flex items-center justify-center relative">
-      <div className="md:fixed hidden inset-0 -z-40 overflow-hidden">
+      <div className="fixed md:block hidden inset-0 -z-40 overflow-hidden">
         <div className="absolute" />
         <div className="absolute top-32 right-32 w-[1319.28px] h-[592.5px] ">
           <BackgroundSvgRight />
