@@ -4,9 +4,11 @@ import { HttpStatusCode } from '@/utils/enums'
 import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
+  console.log('HELLOOOO')
+
   try {
-    const candidates = await prisma.candidate.findMany({
-      orderBy: { createdAt: 'desc' },
+    const candidates = await prisma.candidate.findRaw({
+      //   orderBy: { createdAt: 'desc' },
     })
 
     if (!candidates) {
